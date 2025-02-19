@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>signup page</title>
+    <script>
+        function signup(event) {
+            event.preventDefault(); // Prevent form from submitting automatically
+
+            const fullname = document.getElementById("fullname").value.trim();
+            const username = document.getElementById("username").value.trim();
+            const password = document.getElementById("password").value;
+            const confirmpassword = document.getElementById("confirmpassword").value;
+
+            if (fullname === "" || username === "" || password === "" || confirmpassword === "") {
+                alert("All details must be filled.");
+                return;
+            }
+
+            if (password !== confirmpassword) {
+                alert("Passwords do not match.");
+                return;
+            }
+
+            // Store user data
+            localStorage.setItem('fullname', fullname);
+            localStorage.setItem('username', username);
+            localStorage.setItem('password', password);
+            alert("Signed up successfully!");
+            window.location.href = "login2.html";
+        }
+    </script>
+
+    <style>
+        * {
+            font-family: Sans-Serif;
+        }
+
+        body {
+            margin-left: 40%;
+            margin-top: 7%;
+        }
+
+        .form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            max-width: 350px;
+            padding: 20px;
+            border-radius: 20px;
+            position: relative;
+            background-color: #1a1a1a;
+            color: #fff;
+            border: 1px solid #333;
+        }
+
+        .title {
+            font-size: 28px;
+            font-weight: 600;
+            letter-spacing: -1px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            padding-left: 30px;
+            color: #00bfff;
+        }
+
+        .title::before,
+        .title::after {
+            position: absolute;
+            content: "";
+            height: 16px;
+            width: 16px;
+            border-radius: 50%;
+            left: 0px;
+            background-color: #00bfff;
+        }
+
+        .title::after {
+            animation: pulse 1s linear infinite;
+        }
+
+        .message,
+        .signin {
+            font-size: 14.5px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .signin {
+            text-align: center;
+        }
+
+        .signin a {
+            color: #00bfff;
+            text-decoration: none;
+        }
+
+        .signin a:hover {
+            text-decoration: underline;
+        }
+
+        .form label {
+            position: relative;
+        }
+
+        .form label .input {
+            background-color: #333;
+            color: #fff;
+            width: 100%;
+            padding: 20px 5px 5px 10px;
+            outline: 0;
+            border: 1px solid rgba(105, 105, 105, 0.4);
+            border-radius: 10px;
+        }
+
+        .form label .input+span {
+            color: rgba(255, 255, 255, 0.5);
+            position: absolute;
+            left: 10px;
+            top: 0px;
+            font-size: 0.9em;
+            cursor: text;
+            transition: 0.3s ease;
+        }
+
+        .form label .input:placeholder-shown+span {
+            top: 12.5px;
+            font-size: 0.9em;
+        }
+
+        .form label .input:focus+span,
+        .form label .input:valid+span {
+            color: #00bfff;
+            top: 0px;
+            font-size: 0.7em;
+            font-weight: 600;
+        }
+
+        .submit {
+            border: none;
+            outline: none;
+            padding: 10px;
+            border-radius: 10px;
+            color: #fff;
+            font-size: 16px;
+            background-color: #00bfff;
+            cursor: pointer;
+        }
+
+        .submit:hover {
+            background-color: #00bfff96;
+        }
+
+        @keyframes pulse {
+            from {
+                transform: scale(0.9);
+                opacity: 1;
+            }
+
+            to {
+                transform: scale(1.8);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <form class="form" onsubmit="signup(event)">
+        <p class="title">Register</p>
+        <p class="message">Signup now and get full access to our app.</p>
+
+        <label>
+            <input class="input" type="text" placeholder="" required id="fullname">
+            <span>Full Name</span>
+        </label>
+
+        <label>
+            <input class="input" type="text" placeholder="" required id="username">
+            <span>User Id</span>
+        </label>
+
+        <label>
+            <input class="input" type="password" placeholder="" required id="password">
+            <span>Password</span>
+        </label>
+
+        <label>
+            <input class="input" type="password" placeholder="" required id="confirmpassword">
+            <span>Confirm password</span>
+        </label>
+
+        <button type="submit" class="submit">Submit</button>
+        <p class="signin">Already have an account? <a href="login.html">Sign in</a></p>
+    </form>
+
+</body>
+
+</html>
