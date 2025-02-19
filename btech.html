@@ -1,183 +1,138 @@
-<html>
-<head><title>selcting the course</title>
-<style>
-.s1{
-background-color:cfe2f3;
-font-size:25px;
-font-family:monospace;
-border-radius:5px;
-border-color:white;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Material Selector</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
 
-}
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            width: 100%;
+            text-align: center;
+        }
 
-.s2{
-background-color:#cfe2f3;
-font-size:25px;
-font-family:monospace;
-border-radius:5px;
-border-color:white;
+        h1 {
+            color: #2c3e50;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
 
+        select {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            border: 2px solid #3498db;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+            color: #333;
+            margin-bottom: 20px;
+            cursor: pointer;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
 
+        select:hover {
+            border-color: #2980b9;
+            box-shadow: 0 0 8px rgba(52, 152, 219, 0.5);
+        }
 
-}
-body{
-background-color:#c4def5;
-}
+        select:focus {
+            outline: none;
+            border-color: #2980b9;
+            box-shadow: 0 0 12px rgba(52, 152, 219, 0.7);
+        }
 
+        p {
+            font-size: 16px;
+            color: #555;
+            line-height: 1.6;
+            margin-top: 20px;
+        }
 
-</style>
+        .footer {
+            margin-top: 30px;
+            font-size: 14px;
+            color: #777;
+        }
+    </style>
+    <script>
+        function tech() {
+            var branch = document.getElementById('branch').value;
+            var sem = document.getElementById('sem').value;
 
-<script>
-function tech(){
+            const links = {
+                "1": {
+                    "11": "https://drive.google.com/drive/folders/1CiQu7eSKNUTrZeFOh6c-hMomuGWCjCdc?usp=sharing",
+                    "22": "https://drive.google.com/drive/folders/1CvWENwGx0rjA9E6p9jOtLaDrTmBAvVyP?usp=sharing",
+                    "33": "https://drive.google.com/drive/folders/1D3nwr-i53CZeQ0xBbSGAa5zGjxnJOHrw?usp=sharing",
+                    "44": "https://www.youtube.com",
+                    "55": "https://drive.google.com/drive/folders/1Diu94zXu-QlFo5R2_TVcbUSZZ2mMiTrF?usp=sharing",
+                    "66": "https://www.youtube.com",
+                    "77": "https://www.youtube.com"
+                },
+                "2": {
+                    "11": "https://drive.google.com/drive/folders/1CiQu7eSKNUTrZeFOh6c-hMomuGWCjCdc?usp=sharing",
+                    "22": "https://drive.google.com/drive/folders/1CvWENwGx0rjA9E6p9jOtLaDrTmBAvVyP?usp=sharing",
+                    "33": "https://www.youtube.com",
+                    "44": "https://www.youtube.com",
+                    "55": "https://www.youtube.com",
+                    "66": "https://www.youtube.com",
+                    "77": "https://www.youtube.com"
+                },
+                // Add other branches similarly
+            };
 
-var p=document.getElementById('branch').value;
-var r=document.getElementById('sem').value;
-if(p==1 && r==11){
-window.location.href="https://drive.google.com/drive/folders/1CiQu7eSKNUTrZeFOh6c-hMomuGWCjCdc?usp=sharing"}
-
-else if(p==1 && r==22){
-window.location.href="https://drive.google.com/drive/folders/1CvWENwGx0rjA9E6p9jOtLaDrTmBAvVyP?usp=sharing"}
-
-else if(p==1 && r==33){
-window.location.href="https://drive.google.com/drive/folders/1D3nwr-i53CZeQ0xBbSGAa5zGjxnJOHrw?usp=sharing"}
-
-else if(p==1 && r==44){
-window.location.href="https://www.youtube.com"}
-
-else if(p==1 && r==55){
-window.location.href="https://drive.google.com/drive/folders/1Diu94zXu-QlFo5R2_TVcbUSZZ2mMiTrF?usp=sharing"}
-
-else if(p==1 && r==66){
-window.location.href="https://www.youtube.com"}
-
-else if(p==1 && r==77){
-window.location.href="https://www.youtube.com"}
-
-
-
-
-else if(p==2 && r==11){
-window.location.href="https://drive.google.com/drive/folders/1CiQu7eSKNUTrZeFOh6c-hMomuGWCjCdc?usp=sharing"}
-else if(p==2 && r==22){
-window.location.href="https://drive.google.com/drive/folders/1CvWENwGx0rjA9E6p9jOtLaDrTmBAvVyP?usp=sharing"}
-else if(p==2 && r==33){
-window.location.href="https://www.youtube.com"}
-else if(p==2 && r==44){
-window.location.href="https://www.youtube.com"}
-else if(p==2 && r==55){
-window.location.href="https://www.youtube.com"}
-else if(p==2 && r==66){
-window.location.href="https://www.youtube.com"}
-else if(p==2 && r==77){
-window.location.href="https://www.youtube.com"}
-
-
-
-
-else if(p==3 && r==11){
-window.location.href="https://drive.google.com/drive/folders/1CiQu7eSKNUTrZeFOh6c-hMomuGWCjCdc?usp=sharing"}
-else if(p==3 && r==22){
-window.location.href="https://drive.google.com/drive/folders/1CvWENwGx0rjA9E6p9jOtLaDrTmBAvVyP?usp=sharing"}
-else if(p==3 && r==33){
-window.location.href="https://www.youtube.com"}
-else if(p==3 && r==44){
-window.location.href="https://www.youtube.com"}
-else if(p==3 && r==55){
-window.location.href="https://www.youtube.com"}
-else if(p==3 && r==66){
-window.location.href="https://www.youtube.com"}
-else if(p==3 && r==77){
-window.location.href="https://www.youtube.com"}
-
-
-
-else if(p==4 && r==11){
-window.location.href="https://drive.google.com/drive/folders/1CiQu7eSKNUTrZeFOh6c-hMomuGWCjCdc?usp=sharing"}
-else if(p==4 && r==22){
-window.location.href="https://drive.google.com/drive/folders/1CvWENwGx0rjA9E6p9jOtLaDrTmBAvVyP?usp=sharing"}
-else if(p==4 && r==33){
-window.location.href="https://www.youtube.com"}
-else if(p==4 && r==44){
-window.location.href="https://www.youtube.com"}
-else if(p==4 && r==55){
-window.location.href="https://www.youtube.com"}
-else if(p==4 && r==66){
-window.location.href="https://www.youtube.com"}
-else if(p==4 && r==77){
-window.location.href="https://www.youtube.com"}
-
-
-else if(p==5 && r==11){
-window.location.href="https://drive.google.com/drive/folders/1CiQu7eSKNUTrZeFOh6c-hMomuGWCjCdc?usp=sharing"}
-else if(p==5 && r==22){
-window.location.href="https://drive.google.com/drive/folders/1CvWENwGx0rjA9E6p9jOtLaDrTmBAvVyP?usp=sharing"}
-else if(p==5 && r==33){
-window.location.href="https://www.youtube.com"}
-else if(p==5 && r==44){
-window.location.href="https://www.youtube.com"}
-else if(p==5 && r==55){
-window.location.href="https://www.youtube.com"}
-else if(p==5 && r==66){
-window.location.href="https://www.youtube.com"}
-else if(p==5 && r==77){
-window.location.href="https://www.youtube.com"}
-
-
-
-else if(p==6 && r==11){
-window.location.href="https://drive.google.com/drive/folders/1CiQu7eSKNUTrZeFOh6c-hMomuGWCjCdc?usp=sharing"}
-else if(p==6 && r==22){
-window.location.href="https://drive.google.com/drive/folders/1CvWENwGx0rjA9E6p9jOtLaDrTmBAvVyP?usp=sharing"}
-else if(p==6 && r==33){
-window.location.href="https://www.youtube.com"}
-else if(p==6 && r==44){
-window.location.href="https://www.youtube.com"}
-else if(p==6 && r==55){
-window.location.href="https://www.youtube.com"}
-else if(p==6 && r==66){
-window.location.href="https://www.youtube.com"}
-else if(p==6 && r==77){
-window.location.href="https://www.youtube.com"}
-
-
-
-}
-
-
-
-
-</script>
-
+            if (links[branch] && links[branch][sem]) {
+                window.location.href = links[branch][sem];
+            } else {
+                alert("Invalid selection. Please try again.");
+            }
+        }
+    </script>
 </head>
 <body>
-<div style="background-color:c5e4ff; padding:30px ">
+    <div class="container">
+        <h1>SELECT YOUR BRANCH</h1>
+        <select id="branch" onchange="tech()">
+            <option value="">-- Select Branch --</option>
+            <option value="1">CSE</option>
+            <option value="2">ECE</option>
+            <option value="3">MECH</option>
+            <option value="4">CIVIL</option>
+            <option value="5">EEE</option>
+            <option value="6">CHE</option>
+        </select>
 
-<h1 style="color:white; background-color:#387bc0; font-family:arial;">SELECT THE BRANCH</h1>
-<select class="s1" id="branch" onchange="tech()">
-<option>BRANCH</option>
-<option value="1">CSE</option>
-<option value="2">ECE</option>
-<option value="3">MECH</option>
-<option value="4">CIVIL</option>
-<option value="5">EEE</option>
-<option value="6">CHE</option>
+        <h1>SELECT YOUR SEMESTER</h1>
+        <select id="sem" onchange="tech()">
+            <option value="">-- Select Semester --</option>
+            <option value="11">1-1 SEM</option>
+            <option value="22">1-2 SEM</option>
+            <option value="33">2-1 SEM</option>
+            <option value="44">2-2 SEM</option>
+            <option value="55">3-1 SEM</option>
+            <option value="66">3-2 SEM</option>
+            <option value="77">4-1 SEM</option>
+        </select>
 
-</select>
-<h1 style="color:white; background-color:#387bc0; font-family:arial;">SELECT THE SEMESTER</h1>
-<select  class="s2" id="sem" onchange="tech()">
-
-<option>SEMESTER</option>
-<option value="11">1-1 SEM</option>
-<option value="22">1-2 SEM</option>
-<option value="33">2-1 SEM</option>
-<option value="44">2-2 SEM</option>
-<option value="55">3-1 SEM</option>
-<option value="66">3-2 SEM</option>
-<option value="77">4-1 SEM</option>
-</select>
-</div>
-
-<p style="font-weight:bold; font-size:25px; background-
-color:#c4def5; font-family:monospace;">=> By selecting the branch and semester you can redirect to the matrials you want.</p>
-
-</body></html>
+        <p>By selecting your branch and semester, you will be redirected to the relevant course materials.</p>
+        <div class="footer">
+            &copy; 2023 Course Material Selector. All rights reserved.
+        </div>
+    </div>
+</body>
+</html>
